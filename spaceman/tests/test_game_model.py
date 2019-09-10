@@ -48,11 +48,11 @@ class GameModelTests( TestCase ):
             guessed_word_state= ['','','S','','W','O','R',''],
             letters_guessed = ['S', 'A', 'W', 'O', 'R','C'],
             guesses_allowed= 5, 
-            guesses_taken= expectedGuessesTaken
+            guesses_taken= expectedGuessesTaken - 1
         )
 
         game.handleGuess('X')
-        self.assertEquals( expectedGuessesTaken, game.guesses_taken )
+        self.assertEqual( expectedGuessesTaken, game.guesses_taken )
     
 
     ### guessed_word_state field
